@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Happy Birthday, Keerthika</title>
+<meta name="description" content="A little world made just for you." />
+
+<!--
+  ============================================================
+  HOW THIS PROJECT IS ORGANISED
+  ============================================================
+  index.html   -> structure & content (this file)
+  style.css    -> all visual design
+  script.js    -> countdown, gallery, letters, music, confetti
+  assets/photos/   -> put your 6 real photos here (photo-1.jpg ... photo-6.jpg)
+  assets/music/    -> put your song here as our-song.mp3
+
+  Search this file for "EDIT:" comments — every one marks a
+  spot you can safely change without breaking anything.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Tiny floating hearts/stars drift across the whole page, generated in script.js -->
+<div class="ambient-field" id="ambientField" aria-hidden="true"></div>
+
+<!-- ============================================================
+     1. HERO
+     ============================================================ -->
+<section class="hero" id="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__content">
+    <p class="eyebrow">for the girl who makes ordinary days feel chosen</p>
+
+    <!-- EDIT: her name -->
+    <h1 class="hero__name">Happy Birthday,<br><span>Keerthika</span></h1>
+
+    <!-- EDIT: short romantic intro -->
+    <p class="hero__intro">
+      My Thango, my Myluu, my Pattu — however I say it, I mean the same thing:
+      you are the best part of my life. This little page is for you, made slowly,
+      with a lot of love and a little bit of nerves.
+    </p>
+
+    <div class="countdown" id="countdown" aria-live="polite">
+      <!-- Filled by script.js — shows days/hours until Sept 24,
+           and switches to "Today is your day" automatically -->
+    </div>
+
+    <button class="btn btn--primary hero__cta" id="openHeartBtn">
+      Open My Heart
+      <span class="btn__heart" aria-hidden="true">♥</span>
+    </button>
+  </div>
+
+  <div class="hero__scrollcue" aria-hidden="true">
+    <span></span>
+  </div>
+</section>
+
+<main id="mainContent">
+
+<!-- ============================================================
+     2. APOLOGY LETTER
+     ============================================================ -->
+<section class="section apology" id="apology">
+  <div class="section__inner">
+    <p class="section__kicker">a small truth from my heart</p>
+    <h2 class="section__title">Before anything else</h2>
+
+    <!--
+      EDIT: your apology letter.
+      Keep paragraphs short — they read better on a phone.
+      Replace [HER NAME] and the rest of the text freely.
+    -->
+    <div class="letter-card">
+      <p>My Keerthika,</p>
+
+      <p>
+        Before the candles and the songs, I wanted to say something quieter.
+        There were days I got it wrong — moments I was careless with your
+        feelings when I should have been gentle, times I was distant when you
+        needed me close. I'm not writing this so you'll say it's okay. I'm
+        writing it because you deserve to hear it plainly: I see it, I own it,
+        and I'm sorry.
+      </p>
+
+      <p>
+        You have never once made me feel small for admitting a mistake, and
+        that kindness is one of the many reasons I love you. So on your day,
+        the first thing I want you to have isn't a gift — it's this: my
+        promise to keep learning how to love you better, one ordinary day at
+        a time.
+      </p>
+
+      <p>Thank you for staying. Thank you for being you.</p>
+
+      <p class="letter-signoff">— always yours</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. RELATIONSHIP TIMELINE
+     ============================================================ -->
+<section class="section timeline-section" id="timeline">
+  <div class="section__inner">
+    <p class="section__kicker">our story so far</p>
+    <h2 class="section__title">Every road led here</h2>
+
+    <!--
+      EDIT: your timeline.
+      Each .timeline__item is one milestone: date, title, description,
+      and an image. Add or remove .timeline__item blocks freely —
+      the line connecting them draws itself automatically in CSS.
+    -->
+    <ol class="timeline">
+
+      <li class="timeline__item">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card">
+          <img class="timeline__img" src="assets/photos/photo-1.jpg" alt="The first time we spoke" loading="lazy">
+          <p class="timeline__date">Where it began</p>
+          <h3 class="timeline__title">Our First Hello</h3>
+          <p class="timeline__desc">
+            I still remember how easy it was to talk to you, like we'd already
+            known each other in some other life.
+          </p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card">
+          <img class="timeline__img" src="assets/photos/photo-2.jpg" alt="Our first date" loading="lazy">
+          <p class="timeline__date">Our first date</p>
+          <h3 class="timeline__title">Nervous, in a Good Way</h3>
+          <p class="timeline__desc">
+            I planned three things to say and forgot all of them the moment
+            you smiled. That was the day I knew.
+          </p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card">
+          <img class="timeline__img" src="assets/photos/photo-3.jpg" alt="A favourite memory together" loading="lazy">
+          <p class="timeline__date">A favourite memory</p>
+          <h3 class="timeline__title">The Day We Laughed Too Much</h3>
+          <p class="timeline__desc">
+            Whenever I need to smile, I go back to this one. You have a way of
+            making small moments feel enormous.
+          </p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card">
+          <img class="timeline__img" src="assets/photos/photo-4.jpg" alt="A difficult time we came through" loading="lazy">
+          <p class="timeline__date">A harder chapter</p>
+          <h3 class="timeline__title">The Days We Came Through</h3>
+          <p class="timeline__desc">
+            We had rough days too — some of them because of me. But we stayed,
+            we talked, we chose each other again. That matters more than any
+            easy day.
+          </p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card">
+          <img class="timeline__img" src="assets/photos/photo-5.jpg" alt="Just the two of us" loading="lazy">
+          <p class="timeline__date">Lately</p>
+          <h3 class="timeline__title">Just Us, Still Us</h3>
+          <p class="timeline__desc">
+            Nothing dramatic — just quiet evenings and small jokes only we
+            understand. This is my favourite kind of ordinary.
+          </p>
+        </div>
+      </li>
+
+      <li class="timeline__item timeline__item--today">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card">
+          <img class="timeline__img" src="assets/photos/photo-6.jpg" alt="Today, celebrating you" loading="lazy">
+          <p class="timeline__date">Today</p>
+          <h3 class="timeline__title">Here's to You, Keerthika</h3>
+          <p class="timeline__desc">
+            One more year of loving you, more carefully and more honestly
+            than the last.
+          </p>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. PHOTO MEMORIES
+     ============================================================ -->
+<section class="section gallery-section" id="gallery">
+  <div class="section__inner">
+    <p class="section__kicker">photo memories</p>
+    <h2 class="section__title">Little Proofs We Happened</h2>
+    <p class="section__lead">Tap any photo to see it bigger.</p>
+
+    <!--
+      EDIT: replace each src with your own photo, and edit
+      data-caption with your own caption for the lightbox.
+    -->
+    <div class="gallery" id="gallery-grid">
+      <button class="gallery__item" data-caption="Our first hello — still my favourite memory to replay.">
+        <img src="assets/photos/photo-1.jpg" alt="Photo memory 1" loading="lazy">
+      </button>
+      <button class="gallery__item" data-caption="The nervous, wonderful first date.">
+        <img src="assets/photos/photo-2.jpg" alt="Photo memory 2" loading="lazy">
+      </button>
+      <button class="gallery__item" data-caption="The day we laughed until it hurt.">
+        <img src="assets/photos/photo-3.jpg" alt="Photo memory 3" loading="lazy">
+      </button>
+      <button class="gallery__item" data-caption="A hard day we got through, together.">
+        <img src="assets/photos/photo-4.jpg" alt="Photo memory 4" loading="lazy">
+      </button>
+      <button class="gallery__item" data-caption="An ordinary evening I never want to forget.">
+        <img src="assets/photos/photo-5.jpg" alt="Photo memory 5" loading="lazy">
+      </button>
+      <button class="gallery__item" data-caption="Here's to many more of these.">
+        <img src="assets/photos/photo-6.jpg" alt="Photo memory 6" loading="lazy">
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox (hidden until a photo is tapped) -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close photo">✕</button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<!-- ============================================================
+     5. SURPRISE LETTERS
+     ============================================================ -->
+<section class="section letters-section" id="letters">
+  <div class="section__inner">
+    <p class="section__kicker">sealed for you</p>
+    <h2 class="section__title">Open Whenever You Like</h2>
+    <p class="section__lead">Five little letters. Tap a seal to open it.</p>
+
+    <!--
+      EDIT: each .letter-seal is one card. The title shows on the
+      sealed card; the text inside .letter-seal__body is what
+      appears once it's opened. Add more by copying a whole
+      .letter-seal block.
+    -->
+    <div class="letter-grid" id="letterGrid">
+
+      <button class="letter-seal" data-open="false">
+        <span class="letter-seal__wax" aria-hidden="true">♥</span>
+        <span class="letter-seal__title">Open when you need a smile</span>
+        <span class="letter-seal__body">
+          if i could be beside you right now, i'd pull you close and remind you how much i love you.
+          you're my favourite person, my safest place, and the reason so many of my days feel brighter.
+          whenever you miss me, remember: my heart is always with you.
+        </span>
+      </button>
+
+      <button class="letter-seal" data-open="false">
+        <span class="letter-seal__wax" aria-hidden="true">♥</span>
+        <span class="letter-seal__title">Things I love about you</span>
+        <span class="letter-seal__body">
+          i love the way you make me laugh, how your voice can calm me down, and how
+          being with you feels like home. i love your little habits, your kind heart,
+          and the way you make even an ordinary day feel special.
+          i love you for exactly who you are.
+        </span>
+      </button>
+
+      <button class="letter-seal" data-open="false">
+        <span class="letter-seal__wax" aria-hidden="true">♥</span>
+        <span class="letter-seal__title">My favourite memory of us</span>
+        <span class="letter-seal__body">
+          my favourite memory is the day you have chosen me .
+          i keep it close because it reminds me how lucky i am to love you and to be loved by you.
+          even now, thinking about it makes me smile.
+        </span>
+      </button>
+
+      <button class="letter-seal" data-open="false">
+        <span class="letter-seal__wax" aria-hidden="true">♥</span>
+        <span class="letter-seal__title">A promise from me</span>
+        <span class="letter-seal__body">
+          i promise to keep showing up for you, to listen when you need me,
+          and to celebrate every little thing that makes you you. whatever life brings,
+          i'll keep choosing us, with all the love in my heart.
+        </span>
+      </button>
+
+      <button class="letter-seal" data-open="false">
+        <span class="letter-seal__wax" aria-hidden="true">♥</span>
+        <span class="letter-seal__title">One more birthday wish</span>
+        <span class="letter-seal__body">
+          happy birthday, my love. i wish i could wrap you in the biggest hug
+          and tell you in person how much you mean to me.
+          may this year bring you the joy you bring into my life every day.
+          i love you today, tomorrow, and through all the little moments still waiting for us.
+        </span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- Letter reading overlay -->
+<div class="letter-overlay" id="letterOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="letter-overlay__paper">
+    <button class="letter-overlay__close" id="letterOverlayClose" aria-label="Close letter">✕</button>
+    <h3 class="letter-overlay__title" id="letterOverlayTitle"></h3>
+    <p class="letter-overlay__body" id="letterOverlayBody"></p>
+  </div>
+</div>
+
+<!-- ============================================================
+     6. BIRTHDAY WISHES
+     ============================================================ -->
+<section class="section wishes-section" id="wishes">
+  <div class="section__inner">
+    <p class="section__kicker">make a wish</p>
+    <h2 class="section__title">Happy Birthday, My Love</h2>
+
+    <!-- EDIT: birthday message + quote -->
+    <p class="wishes__message">
+      Another year older, and somehow you only get more wonderful. Whatever
+      this year brings, I hope I get to be there for it — the good days and
+      the ordinary ones too.
+    </p>
+
+    <blockquote class="wishes__quote">
+      “Every day is a chance to begin again, and every love worth keeping is
+      worth choosing, again and again.”
+    </blockquote>
+
+    <button class="btn btn--primary wishes__btn" id="makeWishBtn">
+      Make a Wish
+    </button>
+  </div>
+  <!-- confetti / floating hearts are drawn into here by script.js -->
+  <div class="wishes__burst" id="wishesBurst" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     7. FINAL SECTION
+     ============================================================ -->
+<section class="section final-section" id="final">
+  <div class="section__inner">
+    <!-- EDIT: closing message -->
+    <p class="final__message">
+      Thank you for being part of my life. I hope this year brings you all
+      the happiness you deserve — and I hope I get to keep being the person
+      who gives you some of it.
+    </p>
+
+    <button class="btn btn--outline final__btn" id="lastSurpriseBtn">
+      One Last Surprise
+    </button>
+
+    <p class="final__credit">made with a very full heart, for Keerthika</p>
+  </div>
+</section>
+
+<!-- Final note overlay -->
+<div class="final-overlay" id="finalOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="final-overlay__content">
+    <p class="final-overlay__note" id="finalOverlayNote">
+      I choose you, today and in all the days I get to love you.
+    </p>
+    <button class="btn btn--primary" id="finalOverlayClose">Close</button>
+  </div>
+</div>
+
+</main>
+
+<!-- ============================================================
+     FLOATING MUSIC PLAYER
+     ============================================================ -->
+<div class="music-player" id="musicPlayer">
+  <!--
+    EDIT: point this at your song. Mobile browsers block
+    autoplay, so this only plays after she taps the button —
+    that's expected, not a bug.
+  -->
+  <audio id="bgAudio" src="assets/music/our-song.mp3" loop preload="none"></audio>
+
+  <button class="music-player__toggle" id="musicToggle" aria-label="Play our song">
+    <span class="music-player__icon" id="musicIcon">♪</span>
+  </button>
+
+  <div class="music-player__panel" id="musicPanel">
+    <p class="music-player__label" id="musicLabel">Tap play for our song</p>
+    <input type="range" id="volumeSlider" class="music-player__volume" min="0" max="1" step="0.01" value="0.6" aria-label="Volume">
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
